@@ -219,6 +219,8 @@ img { max-width: 100%; display: block; }
   -webkit-overflow-scrolling: touch;
 }
 
+/* removed carousel/ribbon/gift styles (reverted) */
+
 .statue-card {
   flex: 0 0 calc((100% - 36px) / 3);
   background: var(--paper-soft);
@@ -227,9 +229,9 @@ img { max-width: 100%; display: block; }
   border: 1px solid var(--line);
   box-shadow: 0 12px 30px rgba(45,32,19,.06);
 }
-
-.statue-thumb { display: block; border: 0; padding: 0; background: transparent; width: 100%; }
-.statue-thumb img { width: 100%; height: 260px; object-fit: cover; display: block; }
+.statue-card { display: flex; flex-direction: column; }
+.statue-thumb { display: block; border: 0; padding: 0; background: transparent; width: 100%; height: 260px; overflow: hidden; flex: 0 0 auto; }
+.statue-thumb img, .statue-card img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
 .statue-meta { padding: 12px; color: var(--muted); }
 
