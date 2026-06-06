@@ -1,198 +1,280 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
-import { Globe2, Mail, MapPin, Play, Sparkles, Star, Music2, ArrowRight, Hammer, Heart, BadgeCheck, Video } from 'lucide-react';
+import * as Lucide from 'lucide-react';
+import { ArrowRight, Mail, MapPin, Menu, Play, Sparkles, Music2 } from 'lucide-react';
 import { motion } from 'framer-motion';
 import './styles.css';
 
-const socials = [
-  { label: 'YouTube', href: 'https://www.youtube.com/@aselacrafts', icon: Video },
-  { label: 'Facebook', href: 'https://www.facebook.com/AselaCraft', icon: Globe2 },
-  { label: 'TikTok', href: '#tiktok-profile', icon: Music2 },
-  { label: 'Instagram', href: '#instagram-profile', icon: Globe2 },
-];
+const youtube = 'https://www.youtube.com/@aselacrafts';
+const facebook = 'https://www.facebook.com/AselaCraft';
 
-const works = [
+const artworkImages = [
   {
     title: 'Lion Face Soap Carving',
-    type: 'Tutorial',
+    category: 'Soap carving tutorial',
+    description: 'Fine hand-carved detail shaped with patience and precision.',
     img: 'https://i.ytimg.com/vi/TmKlE3NPguw/hqdefault.jpg',
     href: 'https://www.youtube.com/watch?v=TmKlE3NPguw',
   },
   {
-    title: 'Horse Head Soap Carving',
-    type: 'Handmade carving',
+    title: 'Horse Head Carving',
+    category: 'Handmade carving',
+    description: 'Expressive animal form created from simple materials.',
     img: 'https://i.ytimg.com/vi/d3iQ516-P2U/hqdefault.jpg',
     href: 'https://www.youtube.com/watch?v=d3iQ516-P2U',
   },
   {
     title: 'Cat Soap Carving',
-    type: 'Step-by-step art',
+    category: 'Step-by-step craft',
+    description: 'A calm, approachable tutorial for craft lovers.',
     img: 'https://i.ytimg.com/vi/c-O429apN-4/hqdefault.jpg',
     href: 'https://www.youtube.com/watch?v=c-O429apN-4',
   },
   {
-    title: 'Turtle Soap Carving',
-    type: 'Short-form craft',
+    title: 'Turtle Carving',
+    category: 'Short-form artwork',
+    description: 'Compact handmade art designed for social video audiences.',
     img: 'https://i.ytimg.com/vi/UjJGfH5Faqc/hqdefault.jpg',
     href: 'https://www.youtube.com/shorts/UjJGfH5Faqc',
   },
-  {
-    title: 'Gold Fish Carving',
-    type: 'Popular work',
-    img: 'https://i.ytimg.com/vi/ScoTvEkccpw/hqdefault.jpg',
-    href: 'https://www.youtube.com/@aselacrafts',
-  },
-  {
-    title: 'Wooden Chapel & Sacred Statues',
-    type: 'Devotional art',
-    img: 'https://images.unsplash.com/photo-1518998053901-5348d3961a04?auto=format&fit=crop&w=1200&q=80',
-    href: 'https://www.facebook.com/AselaCraft',
-  },
 ];
 
-const skills = ['Soap carving', 'Wood carving', 'Religious statues', 'Miniatures', 'Home chapels', 'Decorative handmade art'];
+const socials = [
+  { label: 'YouTube', href: youtube, icon: <Play size={18} />, text: 'Watch & subscribe' },
+  { label: 'Facebook', href: facebook, icon: <Sparkles size={18} />, text: 'Like & follow' },
+  { label: 'Instagram', href: '#', icon: <Sparkles size={18} />, text: 'Add Instagram link' },
+  { label: 'TikTok', href: '#', icon: <Music2 size={18} />, text: 'Add TikTok link' },
+];
+
+function Logo() {
+  return (
+    <a href="#home" className="logo" aria-label="AselaCrafts home">
+      <span className="logo-mark">A</span>
+      <span>AselaCrafts</span>
+    </a>
+  );
+}
 
 function App() {
   return (
-    <main>
-      <header className="site-header">
-        <a href="#home" className="brand"><span>Asela</span>Crafts</a>
-        <nav>
-          <a href="#work">Work</a>
-          <a href="#story">Story</a>
+    <main className="site">
+      <header className="header">
+        <Logo />
+        <nav className="nav-links" aria-label="Main navigation">
+          <a href="#home">Home</a>
+          <a href="#about">About</a>
+          <a href="#gallery">Gallery</a>
+          <a href="#videos">Videos</a>
           <a href="#social">Social</a>
-          <a href="#contact" className="nav-cta">Enquire</a>
+          <a href="#contact">Contact</a>
         </nav>
+        <div className="header-socials" aria-label="Social links">
+          <a href={youtube} target="_blank" rel="noreferrer" aria-label="YouTube"><Play size={20} /></a>
+          <a href={facebook} target="_blank" rel="noreferrer" aria-label="Facebook"><Sparkles size={19} /></a>
+          <a href="#social" aria-label="Instagram"><Sparkles size={19} /></a>
+          <a href="#social" aria-label="TikTok"><Music2 size={19} /></a>
+        </div>
+        <button className="menu-button" aria-label="Open menu"><Menu /></button>
       </header>
 
-      <section id="home" className="hero section-shell">
+      <section id="home" className="hero">
         <div className="hero-copy">
-          <motion.p initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} className="eyebrow">
-            Handmade sculptures · carving tutorials · devotional art
+          <motion.p className="kicker" initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }}>
+            Handmade artworks
           </motion.p>
           <motion.h1 initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.08 }}>
-            Art shaped by patience, faith and gifted hands.
+            Creativity in Every <span>Detail</span>
           </motion.h1>
-          <motion.p initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.16 }} className="hero-text">
-            AselaCrafts is the personal art brand of <strong>Asela Warnakula</strong>, showcasing elegant handmade statues, carvings and step-by-step craft videos created with care from Kalutara, Sri Lanka.
+          <motion.p className="tagline" initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.12 }}>
+            # Art shaped by patience, faith and gifted hands.
           </motion.p>
-          <div className="hero-actions">
-            <a className="primary-btn" href="#work">Explore the gallery <ArrowRight size={18}/></a>
-            <a className="secondary-btn" href="https://www.youtube.com/@aselacrafts" target="_blank" rel="noreferrer"><Play size={18}/> Watch on YouTube</a>
-          </div>
-          <div className="proof-strip">
-            <span><Star/> 180+ videos</span>
-            <span><BadgeCheck/> Original handmade work</span>
-            <span><Heart/> Created with devotion</span>
-          </div>
+          <motion.p className="lead" initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.16 }}>
+            Explore unique handmade statues, carvings and devotional artworks by <strong>Asela Warnakula</strong>, the sole artist behind AselaCrafts.
+          </motion.p>
+          <motion.div className="signature" initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.22 }}>
+            Asela Warnakula
+            <small>Artist. Sculptor. Devotee.</small>
+          </motion.div>
+          <motion.div className="actions" initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.28 }}>
+            <a href="#gallery" className="btn btn-dark">Browse Gallery <ArrowRight size={17} /></a>
+            <a href={youtube} target="_blank" rel="noreferrer" className="btn btn-light"><Play size={17} /> Watch on YouTube</a>
+          </motion.div>
         </div>
-        <motion.div initial={{ opacity: 0, scale: .96 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: .18 }} className="hero-art">
-          <div className="orb orb-one" />
-          <div className="orb orb-two" />
-          <img src="https://i.ytimg.com/vi/TmKlE3NPguw/hqdefault.jpg" alt="AselaCrafts lion face carving" className="main-art" />
-          <div className="floating-card card-one"><Sparkles/> Hand carved detail</div>
-          <div className="floating-card card-two"><Hammer/> Soap · wood · statues</div>
+
+        <motion.div className="hero-collage" initial={{ opacity: 0, scale: 0.96 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: 0.18 }}>
+          <div className="paper paper-one"><img src="https://i.ytimg.com/vi/TmKlE3NPguw/hqdefault.jpg" alt="AselaCrafts carving artwork" /></div>
+          <div className="paper paper-two"><img src="https://images.unsplash.com/photo-1544914379-806667cd9489?auto=format&fit=crop&w=1000&q=80" alt="Handcrafted statue detail" /></div>
+          <div className="paper paper-three"><img src="https://images.unsplash.com/photo-1519682337058-a94d519337bc?auto=format&fit=crop&w=1000&q=80" alt="Artist working with carving tools" /></div>
+          <div className="paper paper-four"><img src="https://i.ytimg.com/vi/d3iQ516-P2U/hqdefault.jpg" alt="AselaCrafts handmade carving" /></div>
         </motion.div>
       </section>
 
-      <section className="marquee" aria-label="AselaCrafts focus areas">
-        <div>{skills.map((skill) => <span key={skill}>{skill}</span>)}</div>
+      <section id="statues" className="section statues-section">
+        <div className="section-row">
+          <div>
+            <p className="kicker">Sacred placements</p>
+            <h2>My Statues at Churches, Convents and Seminaries</h2>
+            <p className="lead">A selection of devotional works installed in spiritual spaces — created for prayer, reflection and community.</p>
+          </div>
+          <a href={youtube} target="_blank" rel="noreferrer" className="text-link">View full gallery <ArrowRight size={18} /></a>
+        </div>
+
+        <div className="statues-grid">
+          <article className="statue-card">
+            <img src="https://via.placeholder.com/800x600?text=St+Mary+Church" alt="St Mary Church statue" />
+            <div className="statue-meta">
+              <strong>St Mary Church</strong>
+              <span>Parish installation — 2021</span>
+            </div>
+          </article>
+          <article className="statue-card">
+            <img src="https://via.placeholder.com/800x600?text=Convent+Altar" alt="Convent altar statue" />
+            <div className="statue-meta">
+              <strong>Convent Chapel</strong>
+              <span>Devotional altar piece — 2019</span>
+            </div>
+          </article>
+          <article className="statue-card">
+            <img src="https://via.placeholder.com/800x600?text=Seminary+Collection" alt="Seminary statue" />
+            <div className="statue-meta">
+              <strong>Seminary Collection</strong>
+              <span>Teaching + liturgical works — 2022</span>
+            </div>
+          </article>
+        </div>
       </section>
 
-      <section id="work" className="section-shell gallery-section">
-        <div className="section-heading">
-          <p className="eyebrow">Featured portfolio</p>
-          <h2>Crafts that feel timeless, warm and personal.</h2>
-          <p>Use this area as the premium showcase: carvings, statues, tutorials, process videos and commissioned pieces.</p>
+      <section id="about" className="section about-band">
+        <div className="about-copy">
+          <p className="kicker">About the artist</p>
+          <h2>One creator, many forms of handmade expression.</h2>
+          <p>
+            AselaCrafts is the personal brand of Asela Warnakula, created to showcase his handmade sculptures, carvings, devotional artwork and creative tutorials. The design of this site is intentionally clean and gallery-like, allowing the artwork to feel premium, warm and memorable.
+          </p>
         </div>
-        <div className="gallery-grid">
-          {works.map((work, index) => (
+        <div className="stats">
+          <article><strong>1.4K+</strong><span>YouTube subscribers</span></article>
+          <article><strong>186+</strong><span>Videos published</span></article>
+          <article><strong>100%</strong><span>Handmade art</span></article>
+        </div>
+      </section>
+
+      <section id="gallery" className="section featured">
+        <div className="section-row">
+          <div>
+            <p className="kicker">Featured works</p>
+            <h2>Crafted with devotion. Timeless in beauty.</h2>
+          </div>
+          <a href={youtube} target="_blank" rel="noreferrer" className="text-link">View full gallery <ArrowRight size={18} /></a>
+        </div>
+
+        <div className="cards-grid">
+          {artworkImages.map((item, index) => (
             <motion.a
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.04 }}
-              href={work.href}
+              href={item.href}
               target="_blank"
               rel="noreferrer"
-              className="work-card"
-              key={work.title}
+              className="art-card"
+              key={item.title}
+              initial={{ opacity: 0, y: 18 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.05 }}
             >
-              <img src={work.img} alt={work.title} />
+              <img src={item.img} alt={item.title} />
               <div>
-                <span>{work.type}</span>
-                <h3>{work.title}</h3>
+                <span>{item.category}</span>
+                <h3>{item.title}</h3>
+                <p>{item.description}</p>
+                <ArrowRight className="card-arrow" size={18} />
               </div>
             </motion.a>
           ))}
         </div>
       </section>
 
-      <section id="story" className="section-shell split-section">
-        <div className="story-panel">
-          <p className="eyebrow">The artist</p>
-          <h2>Meet Asela Warnakula</h2>
-          <p>
-            A sole creator behind AselaCrafts, Asela transforms simple materials into expressive handmade art. His work carries a calm, devotional and deeply human feeling — from small soap carvings to religious statues and home chapel pieces.
-          </p>
-          <p>
-            This website is designed to become his official digital home: part portfolio, part social hub, part enquiry page for people who discover his work through YouTube, Facebook, TikTok and Instagram.
-          </p>
+      <section id="videos" className="section video-section">
+        <div>
+          <p className="kicker">Watch the process</p>
+          <h2>Follow the artwork from idea to finished creation.</h2>
+          <p>Feature tutorials, short videos and behind-the-scenes craft moments directly from AselaCrafts social channels.</p>
         </div>
-        <div className="values-grid">
-          <article><Sparkles/><h3>Elegant presentation</h3><p>Large visuals, soft textures and refined spacing make the artwork feel premium.</p></article>
-          <article><Play/><h3>Video-first brand</h3><p>YouTube and short-form content are placed at the heart of the site experience.</p></article>
-          <article><Heart/><h3>Personal connection</h3><p>The artist story builds trust and makes the brand feel sincere and memorable.</p></article>
+        <div className="video-frame">
+          <iframe
+            src="https://www.youtube.com/embed?listType=user_uploads&list=aselacrafts"
+            title="AselaCrafts YouTube uploads"
+            loading="lazy"
+            allowFullScreen
+          />
         </div>
       </section>
 
-      <section id="social" className="section-shell social-section">
-        <div className="section-heading">
-          <p className="eyebrow">Follow the journey</p>
-          <h2>One brand, connected across every platform.</h2>
+      <section id="social" className="section social-section">
+        <div className="social-copy">
+          <p className="kicker">Connect & follow</p>
+          <h2>Join the AselaCrafts community</h2>
+          <p>Stay inspired with behind-the-scenes creation, new artworks, tutorials and short craft videos.</p>
         </div>
-        <div className="social-grid">
-          {socials.map(({ label, href, icon: Icon }) => (
-            <a className="social-card" href={href} target={href.startsWith('http') ? '_blank' : undefined} rel="noreferrer" key={label}>
-              <Icon />
-              <span>{label}</span>
-              <ArrowRight size={18}/>
+        <div className="social-cards">
+          {socials.map(({ label, href, icon, text }) => (
+            <a href={href} target={href.startsWith('http') ? '_blank' : undefined} rel="noreferrer" className="social-card" key={label}>
+              {icon}
+              <strong>{label}</strong>
+              <span>{text}</span>
+              <ArrowRight size={18} />
             </a>
           ))}
         </div>
-        <div className="embed-grid">
-          <div className="embed-card">
-            <h3>Latest YouTube work</h3>
-            <iframe src="https://www.youtube.com/embed?listType=user_uploads&list=aselacrafts" title="AselaCrafts YouTube uploads" loading="lazy" allowFullScreen />
-          </div>
-          <div className="embed-card">
-            <h3>Facebook community</h3>
-            <iframe title="AselaCrafts Facebook Page" loading="lazy" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FAselaCraft&tabs=timeline&width=500&height=460&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true" />
-          </div>
-        </div>
       </section>
 
-      <section id="contact" className="section-shell contact-section">
+      <section id="contact" className="contact-panel">
         <div>
-          <p className="eyebrow">Commissions & collaborations</p>
-          <h2>Bring a handmade idea to life.</h2>
-          <p>Use this section for enquiries about statues, gifts, devotional art, tutorials, workshops or social collaborations.</p>
+          <p className="kicker">Custom orders & enquiries</p>
+          <h2>Interested in a handmade artwork?</h2>
+          <p>Use this section for commissions, collaborations, devotional statues, gifts, workshops or media enquiries.</p>
         </div>
-        <a className="primary-btn" href="mailto:hello@aselacrafts.com"><Mail size={18}/> hello@aselacrafts.com</a>
+        <a href="mailto:hello@aselacrafts.com" className="btn btn-dark"><Mail size={18} /> Contact AselaCrafts</a>
       </section>
 
-      <footer>
-        <div><strong>AselaCrafts</strong><span><MapPin size={15}/> Kalutara, Sri Lanka</span></div>
-        <p>© {new Date().getFullYear()} AselaCrafts by Asela Warnakula. Handmade with patience.</p>
+      <footer className="footer">
+        <div className="footer-brand">
+          <Logo />
+          <p>Handmade statues and carvings created with devotion, tradition and timeless craftsmanship.</p>
+          <small>© {new Date().getFullYear()} AselaCrafts. All rights reserved.</small>
+        </div>
+        <div>
+          <h4>Quick links</h4>
+          <a href="#home">Home</a>
+          <a href="#about">About</a>
+          <a href="#gallery">Gallery</a>
+          <a href="#videos">Videos</a>
+        </div>
+        <div>
+          <h4>Categories</h4>
+          <span>Soap Carving</span>
+          <span>Wood Carving</span>
+          <span>Devotional Art</span>
+          <span>Custom Orders</span>
+        </div>
+        <div>
+          <h4>Get in touch</h4>
+          <span><MapPin size={15} /> Sri Lanka</span>
+          <span><Mail size={15} /> hello@aselacrafts.com</span>
+          <a href={facebook} target="_blank" rel="noreferrer">Facebook Page</a>
+        </div>
       </footer>
     </main>
   );
 }
 
-export default App;
-
-createRoot(document.getElementById('root')!).render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-);
+const rootEl = document.getElementById('root');
+if (rootEl) {
+  createRoot(rootEl).render(
+    <React.StrictMode>
+      <App />
+    </React.StrictMode>,
+  );
+} else {
+  // eslint-disable-next-line no-console
+  console.error('Root element not found: #root');
+}
