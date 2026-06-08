@@ -11,7 +11,7 @@ export default function Statues({ onOpen }:{onOpen:(src:string)=>void}){
       <div className="section-row">
         <div>
           <p className="kicker">Sacred placements</p>
-          <h2>Statues in Churches, Convents & Seminaries</h2>
+          <h2>My Creations in Churches, Convents & Seminaries</h2>
           <p className="lead">A curated collection of devotional works created for sacred spaces — inspiring prayer, reflection, and community.</p>
         </div>
       </div>
