@@ -86,7 +86,7 @@ function App() {
           <p>Feature tutorials, short videos and behind-the-scenes craft moments directly from AselaCrafts social channels.</p>
         </div>
         <div className="video-frame">
-          <iframe src="https://www.youtube.com/embed?listType=user_uploads&list=aselacrafts" title="AselaCrafts YouTube uploads" loading="lazy" allowFullScreen />
+          <iframe src="https://www.youtube.com/embed/TmKlE3NPguw" title="AselaCrafts video" loading="lazy" allowFullScreen />
         </div>
       </section>
 
