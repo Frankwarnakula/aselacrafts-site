@@ -59,6 +59,18 @@
             }
         ]
     },
+        {
+        "placeName": "St. Anthony's Church Church",
+        "placeLocation": "Moneragala, Sri Lanka",
+        "placeLocationLink": "",
+        "order": 0,
+        "images": [
+            {
+                "src": "https://scontent.fmel3-1.fna.fbcdn.net/v/t39.30808-6/710827612_981539841511948_6777312265685311592_n.jpg?stp=dst-jpg_tt6&cstp=mx1449x1086&ctp=s1449x1086&_nc_cat=111&ccb=1-7&_nc_sid=f727a1&_nc_ohc=UeMdXU4_A7kQ7kNvwFGXz4G&_nc_oc=Ado_oX8RJeqm0-apZi0D00VkoeMGstmrevZatzbM473u782zXLJ4YPdKfDw4hFs0_f6AyF6oeOS99dxqdY70A6fX&_nc_zt=23&_nc_ht=scontent.fmel3-1.fna&_nc_gid=ODYW42gKBddXu8q1UdVEoQ&_nc_ss=7b2a8&oh=00_Af84ByofsWgUKe_0wIFpg_dndX0ScJvOB96Bkmr4E_lcMg&oe=6A2C36CB",
+                "title": "Moneragala"
+            }
+        ]
+    },
     {
         "placeName": "Kalamulla convent",
         "placeLocation": "Kalamulla, Kalutara, Sri Lanka",
