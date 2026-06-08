@@ -4,6 +4,7 @@ import './styles.css';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import Statues from './components/Statues';
+import statues from './data/statues.json';
 import Gallery from './components/Gallery';
 import Footer from './components/Footer';
 import { ArrowRight, Mail } from 'lucide-react';
@@ -44,13 +45,24 @@ const artworkImages = [
 
 
 function App() {
-  const [lightboxSrc, setLightboxSrc] = React.useState<string | null>(null);
+  const [lightbox, setLightbox] = React.useState<{place:number;image:number} | null>(null);
+
+  const openLightbox = (place:number, image:number) => setLightbox({ place, image });
+  const closeLightbox = () => setLightbox(null);
+  const stepImage = (delta:number) => {
+    if (!lightbox) return;
+    const place = statues[lightbox.place];
+    if (!place) return;
+    const images = place.images || [];
+    const next = (lightbox.image + delta + images.length) % images.length;
+    setLightbox({ place: lightbox.place, image: next });
+  };
 
   return (
     <main className="site">
       <Header />
       <Hero />
-      <Statues onOpen={(s) => setLightboxSrc(s)} />
+      <Statues onOpen={(p,i) => openLightbox(p,i)} />
       <Gallery />
       <section id="about" className="section about-band">
         <div className="about-copy">
@@ -88,14 +100,25 @@ function App() {
 
       <Footer />
 
-      {lightboxSrc && (
-        <div className="lightbox" role="dialog" aria-modal="true" onClick={() => setLightboxSrc(null)}>
+      {lightbox && (() => {
+        const place = statues[lightbox.place];
+        const img = place && place.images && place.images[lightbox.image];
+        if (!img) return null;
+        return (
+        <div className="lightbox" role="dialog" aria-modal="true" onClick={closeLightbox}>
           <div className="lightbox-inner" onClick={(e) => e.stopPropagation()}>
-            <button className="lightbox-close" onClick={() => setLightboxSrc(null)} aria-label="Close">✕</button>
-            <img src={lightboxSrc} alt="Enlarged artwork" />
+            <button className="lightbox-close" onClick={closeLightbox} aria-label="Close">✕</button>
+            {place.images && place.images.length > 1 && (
+              <button aria-label="Previous" onClick={() => stepImage(-1)} style={{position:'absolute',left:12,top:'50%',transform:'translateY(-50%)',background:'transparent',border:0,color:'#fff',fontSize:32}}>‹</button>
+            )}
+            <img src={img.src} alt={img.title || place.placeName} />
+            {place.images && place.images.length > 1 && (
+              <button aria-label="Next" onClick={() => stepImage(1)} style={{position:'absolute',right:12,top:'50%',transform:'translateY(-50%)',background:'transparent',border:0,color:'#fff',fontSize:32}}>›</button>
+            )}
           </div>
         </div>
-      )}
+        );
+      })()}
     </main>
   );
 }
