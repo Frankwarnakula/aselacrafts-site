@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Lent — AselaCrafts</title>
+  <link rel="stylesheet" href="/src/styles.css">
+  <style>
+    /* Lent-specific overrides for a sleek responsive layout */
+    .lent-hero{max-width:1100px;margin:48px auto;padding:24px;background:linear-gradient(180deg,#fff 0%,#f7f7fb 100%);border-radius:12px;box-shadow:0 8px 30px rgba(18,23,40,0.06)}
+    .lent-grid{display:grid;grid-template-columns:1fr;gap:18px}
+    .lent-video{background:#000;border-radius:8px;overflow:hidden}
+    .lent-video iframe{width:100%;height:360px;border:0}
+    .lent-list{display:flex;flex-direction:column;gap:12px}
+    .lent-item{padding:12px;border-radius:8px;background:#fff;box-shadow:0 6px 18px rgba(18,23,40,0.04);display:flex;align-items:center;gap:12px}
+    .lent-item .meta{font-size:14px;color:#444}
+    @media(min-width:880px){.lent-grid{grid-template-columns:2fr 1fr}.lent-video iframe{height:520px}}
+  </style>
+</head>
+<body>
+  <main class="site" style="padding:24px">
+    <a href="/" style="display:inline-block;margin-bottom:18px;color:#222;text-decoration:none;font-weight:600">← Back to site</a>
+    <section class="lent-hero">
+      <header style="display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:18px">
+        <div>
+          <p class="kicker">Christian</p>
+          <h1 style="margin:6px 0 0">Lent — Palm Sunday & Stations</h1>
+          <p style="margin:8px 0 0;color:#666">A curated collection of videos and short clips for devotional reflection.</p>
+        </div>
+      </header>
+
+        <!-- Left: main grid of embedded videos -->
+        <div class="embed-grid">
+          <!-- Palm Sunday group -->
+          <div class="embed-group">
+            <h3>Palm Sunday</h3>
+            <div class="video-grid">
+              <div class="video-card"><iframe src="https://www.youtube.com/embed/74LL19qTd7U" title="Palm Sunday" loading="lazy" allowfullscreen></iframe></div>
+              <div class="video-card"><iframe src="https://www.youtube.com/embed/EqPWDxmZoOk" title="Palm Sunday short" loading="lazy" allowfullscreen></iframe></div>
+              <div class="video-card"><iframe src="https://www.youtube.com/embed/74LL19qTd7U" title="Palm Sunday alternate" loading="lazy" allowfullscreen></iframe></div>
+            </div>
+          </div>
+
+          <!-- Stations of the Cross group -->
+          <div class="embed-group">
+            <h3>Stations of the Cross</h3>
+            <div class="video-grid">
+              <div class="video-card"><iframe src="https://www.youtube.com/embed/l5eIcUruYGA" title="Jesus prays in Gethsemane" loading="lazy" allowfullscreen></iframe></div>
+              <div class="video-card"><iframe src="https://www.youtube.com/embed/rqRO6Hho1I0" title="1st Station" loading="lazy" allowfullscreen></iframe></div>
+              <div class="video-card"><iframe src="https://www.youtube.com/embed/GVUOg5NYj1M" title="2nd Station" loading="lazy" allowfullscreen></iframe></div>
+              <div class="video-card"><iframe src="https://www.youtube.com/embed/_DctpBmAMro" title="3rd Station" loading="lazy" allowfullscreen></iframe></div>
+              <div class="video-card"><iframe src="https://www.youtube.com/embed/Di81arWoDFc" title="4th Station" loading="lazy" allowfullscreen></iframe></div>
+              <div class="video-card"><iframe src="https://www.youtube.com/embed/FvtJ5n5Yo2s" title="5th Station" loading="lazy" allowfullscreen></iframe></div>
+              <div class="video-card"><iframe src="https://www.youtube.com/embed/mKAqN37_bL8" title="6th Station" loading="lazy" allowfullscreen></iframe></div>
+              <div class="video-card"><iframe src="https://www.youtube.com/embed/eZSmmEVgnTM" title="7th Station" loading="lazy" allowfullscreen></iframe></div>
+              <div class="video-card"><iframe src="https://www.youtube.com/embed/67xdSoSYIeQ" title="8th Station" loading="lazy" allowfullscreen></iframe></div>
+              <div class="video-card"><iframe src="https://www.youtube.com/embed/VdyEP4g5uz8" title="9th Station" loading="lazy" allowfullscreen></iframe></div>
+              <div class="video-card"><iframe src="https://www.youtube.com/embed/w8kmPytYy-Y" title="10th Station" loading="lazy" allowfullscreen></iframe></div>
+              <div class="video-card"><iframe src="https://www.youtube.com/embed/LIE-4aYd9Tk" title="11th Station" loading="lazy" allowfullscreen></iframe></div>
+              <div class="video-card"><iframe src="https://www.youtube.com/embed/BGlrfA_CR4" title="12th Station" loading="lazy" allowfullscreen></iframe></div>
+              <div class="video-card"><iframe src="https://www.youtube.com/embed/JQDxtlPTffE" title="13th Station" loading="lazy" allowfullscreen></iframe></div>
+              <div class="video-card"><iframe src="https://www.youtube.com/embed/Hfp-eB8Cn8Y" title="14th Station" loading="lazy" allowfullscreen></iframe></div>
+              <div class="video-card"><iframe src="https://www.youtube.com/embed/EpWgxBa4Br0" title="15th Station" loading="lazy" allowfullscreen></iframe></div>
+            </div>
+          </div>
+
+          <!-- Good Thursday / Good Friday / Easter group -->
+          <div class="embed-group">
+            <h3>Good Thursday / Good Friday / Easter</h3>
+            <div class="video-grid">
+              <div class="video-card"><iframe src="https://www.youtube.com/embed/bAMXyVTMLTw" title="Jesus washes feet" loading="lazy" allowfullscreen></iframe></div>
+              <div class="video-card"><iframe src="https://www.youtube.com/embed/EtOmGIdMP38" title="Last Supper" loading="lazy" allowfullscreen></iframe></div>
+              <div class="video-card"><iframe src="https://www.youtube.com/embed/DH6Ldg3NKPs" title="Tied To The Pillar" loading="lazy" allowfullscreen></iframe></div>
+              <div class="video-card"><iframe src="https://www.youtube.com/embed/Ly80uLN2lgo" title="Scourged" loading="lazy" allowfullscreen></iframe></div>
+              <div class="video-card"><iframe src="https://www.youtube.com/embed/D7jHAsOGAlI" title="Mother shadow" loading="lazy" allowfullscreen></iframe></div>
+              <div class="video-card"><iframe src="https://www.youtube.com/embed/RlsWHWxMi1c" title="Preparing to be crucified" loading="lazy" allowfullscreen></iframe></div>
+              <div class="video-card"><iframe src="https://www.youtube.com/embed/yY07yGYXQvQ" title="St Mary cradling" loading="lazy" allowfullscreen></iframe></div>
+            </div>
+          </div>
+
+          <!-- Easter / Ascension group -->
+          <div class="embed-group">
+            <h3>Easter & Ascension</h3>
+            <div class="video-grid">
+              <div class="video-card"><iframe src="https://www.youtube.com/embed/W_lIorLnOwA" title="Jesus has Risen" loading="lazy" allowfullscreen></iframe></div>
+              <div class="video-card"><iframe src="https://www.youtube.com/embed/T7C8AoNiR5k" title="Resurrection" loading="lazy" allowfullscreen></iframe></div>
+              <div class="video-card"><iframe src="https://www.youtube.com/embed/0QdhiPsxspw" title="Crucifixion" loading="lazy" allowfullscreen></iframe></div>
+              <div class="video-card"><iframe src="https://www.youtube.com/embed/mWBWUBDjVvQ" title="Ascension" loading="lazy" allowfullscreen></iframe></div>
+              <div class="video-card"><iframe src="https://www.youtube.com/embed/H7g9pK0DsTk" title="How to carve Ascension" loading="lazy" allowfullscreen></iframe></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: quick links / description -->
+        <aside class="lent-aside">
+          <div class="aside-card">
+            <h4>About this collection</h4>
+            <p>A curated playlist of Palm Sunday, Stations of the Cross, Good Friday and Easter clips for reflection. Tap any card to open the YouTube video in-place.</p>
+          </div>
+          <div class="aside-card">
+            <h4>Open on YouTube</h4>
+            <a class="cta" href="https://www.youtube.com/@aselacrafts" target="_blank" rel="noreferrer">Visit AselaCrafts on YouTube →</a>
+          </div>
+        </aside>
+      </div>
+
+    </section>
+  </main>
+</body>
+</html>

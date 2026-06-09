@@ -2,6 +2,7 @@ import React from 'react';
 import { createRoot } from 'react-dom/client';
 import './styles.css';
 import Header from './components/Header';
+import Lent from './components/Lent';
 import Hero from './components/Hero';
 import Statues from './components/Statues';
 import statues from './data/statues.json';
@@ -60,6 +61,52 @@ function App() {
 
   return (
     <main className="site">
+      {/* Simple client-side routing: render Lent page when pathname is /lent */}
+      {window.location.pathname === '/lent' ? (
+        <Lent />
+      ) : (
+        <>
+          <Header />
+          <Hero />
+          <Statues onOpen={(p,i) => openLightbox(p,i)} />
+          <Gallery />
+          <section id="about" className="section about-band">
+            <div className="about-copy">
+              <p className="kicker">About the artist</p>
+              <h2>One creator, many forms of handmade expression.</h2>
+              <p>
+                AselaCrafts is the personal brand of Asela Warnakula, created to showcase his handmade sculptures, carvings, devotional artwork and creative tutorials. The design of this site is intentionally clean and gallery-like, allowing the artwork to feel premium, warm and memorable.
+              </p>
+            </div>
+            <div className="stats">
+              <article><strong>1.4K+</strong><span>YouTube subscribers</span></article>
+              <article><strong>186+</strong><span>Videos published</span></article>
+              <article><strong>100%</strong><span>Handmade art</span></article>
+            </div>
+          </section>
+
+          <section id="videos" className="section video-section">
+            <div>
+              <p className="kicker">Watch the process</p>
+              <h2>Follow the artwork from idea to finished creation.</h2>
+              <p>Feature tutorials, short videos and behind-the-scenes craft moments directly from AselaCrafts social channels.</p>
+            </div>
+            <div className="video-frame">
+              <iframe src="https://www.youtube.com/embed/TmKlE3NPguw" title="AselaCrafts video" loading="lazy" allowFullScreen />
+            </div>
+          </section>
+
+          <section id="social" className="section social-section">
+            <div className="social-copy">
+              <p className="kicker">Connect & follow</p>
+              <h2>Join the AselaCrafts community</h2>
+              <p>Stay inspired with behind-the-scenes creation, new artworks, tutorials and short craft videos.</p>
+            </div>
+          </section>
+
+          <Footer />
+        </>
+      )}
       <Header />
       <Hero />
       <Statues onOpen={(p,i) => openLightbox(p,i)} />

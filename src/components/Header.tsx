@@ -14,7 +14,15 @@ export default function Header() {
       <nav className="nav-links" aria-label="Main navigation">
         <a href="#home">Home</a>
         <a href="#about">About</a>
-        <a href="#gallery">Gallery</a>
+        <div className="nav-dropdown">
+          <button className="nav-link">Gallery ▾</button>
+          <div className="dropdown-panel">
+            <div className="dropdown-group">
+              <span className="dropdown-title">Christian</span>
+              <a href="/lent" className="dropdown-item">Lent</a>
+            </div>
+          </div>
+        </div>
         <a href="#videos">Videos</a>
         <a href="#social">Social</a>
         <a href="#contact">Contact</a>

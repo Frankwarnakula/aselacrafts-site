@@ -100,6 +100,59 @@ img { max-width: 100%; display: block; }
 .menu-button { display: none; border: 0; background: transparent; }
 
 .hero {
+  /* Header dropdown styles */
+  .nav-dropdown { position: relative; }
+  .nav-dropdown .nav-link { background: none; border: 0; color: inherit; padding: 8px 6px; cursor: pointer; font-weight: 600; }
+  .nav-dropdown .dropdown-panel { position: absolute; top: 40px; left: 0; background: #fff; border-radius: 10px; padding: 12px; box-shadow: 0 12px 40px rgba(2, 6, 23, 0.08); min-width: 200px; display: none; }
+  .nav-dropdown:hover .dropdown-panel { display: block; }
+  .dropdown-title { display: block; font-weight: 700; margin-bottom: 8px; }
+  .dropdown-item { display: block; padding: 6px 8px; border-radius: 6px; color: #111; text-decoration: none; }
+  .dropdown-item:hover { background: #f3f4f7; }
+
+  /* Lent page small helpers (scoped via lent.html inline but also here for reuse) */
+  .lent-hero { font-family: inherit; }
+  /* Lent embeds layout */
+  .lent-embeds .embed-grid{display:flex;flex-direction:column;gap:28px}
+  .embed-group h3{margin:0 0 10px;font-size:20px}
+  .video-grid{display:grid;grid-template-columns:1fr;gap:12px}
+  .video-card{background:#000;border-radius:10px;overflow:hidden;box-shadow:0 10px 30px rgba(2,6,23,0.06)}
+  .video-card iframe{width:100%;height:220px;border:0;display:block}
+  .lent-aside{margin-top:18px}
+  .art-card{border:1px solid var(--line);background:#ffffffc2;transition:transform .28s,box-shadow .28s;box-shadow:0 18px 40px rgba(45,32,19,0.11)}
+  .art-card:hover{transform:translateY(-8px);box-shadow:0 28px 60px rgba(45,32,19,0.18)}
+  .art-card img{aspect-ratio:1/1.08;object-fit:cover;width:100%}
+  .art-card div{min-height:150px;padding:18px 18px 20px;position:relative}
+  .art-card span{color:var(--gold);letter-spacing:.12em;text-transform:uppercase;font-size:12px;font-weight:800}
+  .art-card h3{font-family:var(--font-display);margin:8px 0 6px;font-size:18px;line-height:1.15}
+  .art-card p{margin:0;font-size:13px;color:var(--muted)}
+  .art-card .video-play{position:absolute;top:18px;right:18px;width:44px;height:44px;border-radius:999px;background:rgba(11,105,255,0.95);display:grid;place-items:center;color:#fff;border:0;font-size:18px}
+  .aside-card{background:linear-gradient(180deg,#fff,#fbfbfd);padding:18px;border-radius:10px;box-shadow:0 8px 30px rgba(2,6,23,0.04);margin-bottom:12px}
+  .cta{display:inline-block;padding:10px 14px;background:#0b69ff;color:#fff;border-radius:8px;text-decoration:none}
+
+  @media(min-width:900px){
+    .lent-grid.lent-embeds{display:grid;grid-template-columns:2fr 1fr;gap:28px}
+    .video-grid{grid-template-columns:repeat(2,1fr)}
+    .video-card iframe{height:260px}
+  }
+
+  @media(min-width:1200px){
+    .video-grid{grid-template-columns:repeat(3,1fr)}
+    .video-card iframe{height:220px}
+  }
+
+  /* Video play button & polished visuals */
+  .video-play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:56px;height:56px;border-radius:999px;border:0;background:linear-gradient(180deg,rgba(11,105,255,0.95),rgba(11,105,255,0.85));color:#fff;font-size:20px;display:grid;place-items:center;box-shadow:0 8px 20px rgba(11,105,255,0.12);opacity:0.95}
+  .video-card strong{display:block;padding:8px}
+  .video-card:hover{transform:translateY(-6px);transition:transform .18s ease}
+  .embed-group{background:linear-gradient(180deg,#fff,#fbfdff);padding:18px;border-radius:12px;box-shadow:0 10px 30px rgba(2,6,23,0.04)}
+  /* subtle overlay */
+  .video-card::after{content:'';position:absolute;left:0;right:0;top:0;bottom:0;border-radius:10px;background:linear-gradient(180deg,rgba(0,0,0,0.0),rgba(0,0,0,0.05));opacity:0.65;pointer-events:none}
+  .video-card img{display:block;width:100%;height:auto}
+  /* Caption and meta for videos */
+  .video-card .meta{padding:0 12px 12px}
+  .video-card img{display:block;width:100%;height:auto}
+  .text-link{color:var(--ink);font-weight:700}
+  .section{padding:48px 0}
   min-height: calc(100vh - 86px);
   display: grid;
   grid-template-columns: minmax(320px, .9fr) minmax(420px, 1.1fr);
