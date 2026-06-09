@@ -1,0 +1,7 @@
+{
+  "rewrites": [
+    { "source": "/lent", "destination": "/index.html" },
+    { "source": "/lent/:path*", "destination": "/index.html" },
+    { "source": "/(.*)", "destination": "/index.html" }
+  ]
+}
